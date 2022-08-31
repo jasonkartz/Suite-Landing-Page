@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap");
+
+/* Variables */
+:root {
+  /* Neutral Colors */
+  --dark-blue: #172339;
+  --grey: #49566d;
+  --cream: #f3ede7;
+  --cream-white: #faf8f6;
+  /* Bright Colors */
+  --violet: #a060ff;
+  --pink: #cb30e3;
+  --gold: #ffa84e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  color: var(--grey);
+  background-color: var(--cream);
+}
+p {
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  line-height: clamp(28px, 2vw, 32px);
+  letter-spacing: clamp(0.0888889px, 2vw, 0.1px);
+}
+.heading-xl,
+.heading-l,
+.heading-m {
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.heading-xl {
+  font-size: clamp(3.8rem, 7vw, 7.2rem);
+  line-height: clamp(44px, 7vw, 78px);
+  letter-spacing: clamp(-0.527778px, 7vw, -1px);
+}
+.heading-l {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.5px;
+}
+.heading-m {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.18px;
+}
+.heading-s {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2.5px;
+}
+q {
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 0.1px;
+}
+footer {
+  font-size: 15px;
+  line-height: 32px;
+  letter-spacing: 0.0833333px;
+}
+header {
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-secondary {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  line-height: clamp(24px, 2vw, 32px);
+  letter-spacing: clamp(-0.14px, 2vw, -0.16px);
+  color: var(--dark-blue);
+  background-color: transparent;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
