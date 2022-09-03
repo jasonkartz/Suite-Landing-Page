@@ -302,6 +302,11 @@ footer {
   }
   .info-section {
     width: 75%;
+    max-width: 82.4rem;
+    max-height: 60rem;
+  }
+  .info-section h1 {
+    width: 80%;
   }
   .stat-section {
     width: 20%;
