@@ -103,9 +103,9 @@ main {
 .heading-xl {
   color: var(--dark-blue);
   font-weight: 400;
-  font-size: clamp(3.8rem, 7vw, 7.2rem);
-  line-height: clamp(44px, 7vw, 78px);
-  letter-spacing: clamp(-0.527778px, 7vw, -1px);
+  font-size: clamp(3.8rem, 7.3vw, 7.2rem);
+  line-height: clamp(44px, 7.3vw, 78px);
+  letter-spacing: clamp(-0.527778px, 7.3vw, -1px);
 }
 .heading-xl span {
   font-weight: 700;
@@ -145,27 +145,27 @@ main {
 }
 .testimonial-section {
   background: url("/assets/pattern-blur.svg") no-repeat;
-  background-size: 80%;
+  background-size: 70%;
   background-position: top;
   color: var(--cream-white);
   background-color: var(--dark-blue);
   padding: 0 2rem 8rem 2rem;
-  margin-top: 50vw;
+  margin-top: 40vw;
   text-align: center;
   border-radius: 1.5rem;
 }
 
 .jeremy {
-  width: 75%;
+  width: 65%;
   position: relative;
-  top: -47vw;
+  top: -35vw;
   left: 7vw;
 }
 .qoute-line {
   width: 20%;
   position: relative;
   right: 35vw;
-  top: -18vw;
+  top: -10vw;
 }
 .testimonial {
   display: flex;
@@ -215,4 +215,57 @@ footer {
 .social-link:hover {
   opacity: 0.5;
   transition: opacity 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 4rem 4vw;
+  }
+  .img-smartphone-mobile {
+    display: none;
+  }
+  .info {
+    min-height: 48.2rem;
+    background: url("./assets/image-hero-portrait@2x.webp") no-repeat;
+    background-size: contain;
+    background-position: 94%;
+    padding: 8rem 4vw;
+    margin-block: 4rem;
+  }
+  .info h1 {
+    width: 70%;
+  }
+  .info p {
+    width: 50%;
+  }
+  .stat-section {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+  }
+  .testimonial-section {
+    position: absolute;
+    background-size: 50%;
+    padding: 0 4vw 8rem 4vw;
+    margin: 20vw 4vw 0 4vw;
+    z-index: 2;
+  }
+  .jeremy {
+    width: 40%;
+    top: -20vw;
+    left: 5vw;
+  }
+  .qoute-line {
+    width: 10%;
+    right: 20vw;
+    top: -6vw;
+  }
+  footer {
+    padding-top: 60rem;
+    padding-bottom: 8rem;
+    padding-inline: 4vw;
+    margin-top: 43rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
