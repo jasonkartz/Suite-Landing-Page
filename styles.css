@@ -24,6 +24,12 @@ body {
   background-color: var(--cream-white);
   position: relative;
 }
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding-block: 2rem;
+}
 button {
   cursor: pointer;
 }
@@ -56,12 +62,12 @@ p {
 }
 header {
   width: 100%;
-  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  padding-inline: 2rem;
 }
 .btn-primary,
 .btn-secondary {
@@ -76,6 +82,7 @@ header {
   line-height: 3.2rem;
   letter-spacing: -0.18px;
   padding: 1.5rem 2.5rem;
+  max-width: 25.6rem;
 }
 .btn-primary:hover {
   background: linear-gradient(135deg, #a060ff 0%, #cb30e3 49.21%, #ffa84e 100%);
@@ -98,8 +105,16 @@ header {
 main {
   width: 100%;
 }
-.info {
-  padding: 3rem 2rem;
+.info-stat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-inline: 2rem;
+}
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .heading-xl {
   color: var(--dark-blue);
@@ -123,13 +138,9 @@ main {
   height: 100%;
   top: -75%;
   left: 0%;
+  z-index: 3;
 }
-.info p {
-  margin-block: 3rem;
-}
-.info button {
-  margin-bottom: 4rem;
-}
+
 .img-smartphone-mobile {
   width: 100%;
 }
@@ -138,7 +149,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 4rem;
 }
 .stat {
   margin-inline: auto;
@@ -151,11 +161,10 @@ main {
   color: var(--cream-white);
   background-color: var(--dark-blue);
   padding: 0 2rem 8rem 2rem;
-  margin-top: 40vw;
+  margin-top: 50vw;
   text-align: center;
   border-radius: 1.5rem;
 }
-
 .jeremy {
   width: 65%;
   position: relative;
@@ -183,9 +192,9 @@ main {
   font-weight: 400;
 }
 q {
-  font-size: clamp(1.8rem, 2vw, 2rem);
-  line-height: clamp(32px, 2vw, 35px);
-  letter-spacing: clamp(0.09px, 2vw, 0.1px);
+  font-size: clamp(1.8rem, 3vw, 2rem);
+  line-height: clamp(32px, 3vw, 35px);
+  letter-spacing: clamp(0.09px, 3vw, 0.1px);
 }
 .heading-m {
   color: var(--cream-white);
@@ -194,7 +203,12 @@ q {
   letter-spacing: -0.18px;
 }
 .cream-background {
-  display: none;
+  width: 100%;
+  height: 35%;
+  background-color: var(--cream);
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
 }
 footer {
   display: flex;
@@ -202,7 +216,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  padding-block: 6rem;
+  padding-bottom: 4rem;
   font-size: 15px;
   line-height: 32px;
   letter-spacing: 0.0833333px;
@@ -222,24 +236,29 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .content-container {
+    padding: 4rem;
+  }
   header {
-    padding: 4rem 4vw;
+    padding: 0;
   }
   .img-smartphone-mobile {
     display: none;
   }
-  .info {
+  .info-stat-container {
+    padding: 0;
+  }
+  .info-section {
     min-height: 48.2rem;
     background: url("./assets/image-hero-portrait@2x.webp") no-repeat;
     background-size: contain;
-    background-position: 94%;
-    padding: 8rem 4vw;
-    margin-block: 4rem;
+    background-position: right;
+    padding: 8rem 0;
   }
-  .info h1 {
-    width: 70%;
+  .info-section h1 {
+    width: 75%;
   }
-  .info p {
+  .info-section p {
     width: 50%;
   }
   .stat-section {
@@ -249,8 +268,8 @@ footer {
   }
   .testimonial-section {
     background-size: 50%;
-    padding: 0 4vw 8rem 4vw;
-    margin: 25vw 4vw 0 4vw;
+    padding: 0 3rem 8rem 3rem;
+    margin: 25vw 0 0 0;
   }
   .jeremy {
     width: 40%;
@@ -262,19 +281,57 @@ footer {
     right: 20vw;
     top: -6vw;
   }
-  .cream-background {
-    display: block;
-    width: 100%;
-    height: 35%;
-    background-color: var(--cream);
-    z-index: -1;
-    position: absolute;
-    bottom: 0;
-  }
   footer {
-    padding-bottom: 4rem;
-    padding-inline: 4vw;
+    padding-bottom: 0;
+    padding-inline: 0;
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+@media (min-width: 1350px) {
+  .content-container {
+    padding-inline: 0;
+    width: 80%;
+    max-width: 1110px;
+    margin-inline: auto;
+    gap: 4rem;
+  }
+  .info-stat-container {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .info-section {
+    width: 75%;
+  }
+  .stat-section {
+    width: 20%;
+    flex-direction: column;
+  }
+  .testimonial-section {
+    overflow: visible;
+    padding-block: 0;
+    padding-inline: 8rem;
+    margin-top: 10rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-position: bottom left;
+    background-size: 50%;
+    height: 54.5rem;
+  }
+  .jeremy {
+    height: 58.956rem;
+    width: 35.981rem;
+    top: -4.2%;
+    left: 2%;
+  }
+  .qoute-line {
+    position: static;
+    width: 6.405rem;
+    height: 5.2rem;
+  }
+  .testimonial {
+    max-width: 35rem;
   }
 }
